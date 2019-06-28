@@ -25,7 +25,7 @@ class ContactRequest extends FormRequest
     {
         return [
             'nama' => 'required|string',
-            'email' => 'required|email',
+            'email' => 'required|email|regex:/(.id)$/',
             'judul' => 'required|string',
             'pesan' => 'required|string'
         ];

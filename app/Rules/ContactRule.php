@@ -11,9 +11,10 @@ class ContactRule implements Rule
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($value)
     {
         //
+        $this->value = $value;
     }
 
     /**
@@ -26,6 +27,11 @@ class ContactRule implements Rule
     public function passes($attribute, $value)
     {
         //
+        if (substr($this->value, -3) != '.id') {
+            return false;
+        }
+
+        return true;
     }
 
     /**
@@ -35,6 +41,6 @@ class ContactRule implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'Mohon mengisi menggunakan email .id';
     }
 }

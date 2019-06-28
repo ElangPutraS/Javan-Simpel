@@ -62,6 +62,7 @@
                 margin-bottom: 30px;
             }
         </style>
+        {!! htmlScriptTagJsApi(/* $formId - INVISIBLE version only */) !!}
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -83,7 +84,9 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-
+                <form>
+                    {!! htmlFormSnippet() !!}
+                </form>
                 <div class="links">
                     <a href="">Home</a>
                     <a href="{{ route('contact.create') }}">Contact</a>
